@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center">
@@ -7,12 +5,10 @@ export default function Home() {
         <h1 className="text-4xl font-bold">
           Buvei Virtual Card Infrastructure
         </h1>
-
         <p className="text-gray-400 text-lg max-w-xl mx-auto">
           Global virtual cards designed for SaaS, AI tools, and advertising
           platforms. Faster payments. Higher success rates.
         </p>
-
         <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="https://app.buvei.com"
@@ -20,7 +16,6 @@ export default function Home() {
           >
             Get Started
           </a>
-
           <a
             href="https://buvei.com"
             className="px-6 py-3 border border-white rounded-lg"
