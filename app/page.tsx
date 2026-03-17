@@ -1,14 +1,3 @@
-"use client";
-
-import { Lock, DollarSign, Shield, Hash, ChevronDown, Zap, CreditCard, Eye, ThumbsUp, Trophy } from "lucide-react";
-import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -16,7 +5,7 @@ const fadeInUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1]
     },
   },
 };
