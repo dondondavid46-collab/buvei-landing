@@ -1,18 +1,9 @@
-"use client";
-
 export const dynamic = "force-dynamic";
-
-import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center space-y-6"
-      >
+      <div className="text-center space-y-6 px-6">
         <h1 className="text-4xl font-bold">
           Buvei Virtual Card Infrastructure
         </h1>
@@ -22,7 +13,7 @@ export default function Home() {
           platforms. Faster payments. Higher success rates.
         </p>
 
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="https://app.buvei.com"
             className="px-6 py-3 bg-white text-black rounded-lg font-medium"
@@ -37,7 +28,7 @@ export default function Home() {
             Learn More
           </a>
         </div>
-      </motion.div>
+      </div>
     </main>
   );
 }
