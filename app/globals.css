@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
+  background: #0b0f19;
+  color: #ffffff;
 }
