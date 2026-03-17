@@ -1,4 +1,257 @@
 export default function Home() {
+  const styles = {
+    page: {
+      minHeight: "100vh",
+      background:
+        "radial-gradient(circle at top right, rgba(59,130,246,0.18), transparent 28%), radial-gradient(circle at bottom left, rgba(168,85,247,0.14), transparent 24%), #0a0f18",
+      color: "#ffffff",
+      fontFamily: "Arial, sans-serif",
+    } as const,
+    container: {
+      maxWidth: "1200px",
+      margin: "0 auto",
+      padding: "0 24px",
+    } as const,
+    header: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "28px 0",
+      borderBottom: "1px solid rgba(255,255,255,0.08)",
+    } as const,
+    brand: {
+      display: "flex",
+      alignItems: "center",
+      gap: "12px",
+    } as const,
+    brandIcon: {
+      width: "44px",
+      height: "44px",
+      borderRadius: "14px",
+      background: "rgba(255,255,255,0.08)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      border: "1px solid rgba(255,255,255,0.12)",
+      fontWeight: 700,
+      letterSpacing: "0.2em",
+    } as const,
+    nav: {
+      display: "flex",
+      gap: "28px",
+      color: "rgba(255,255,255,0.72)",
+      fontSize: "14px",
+    } as const,
+    navLink: {
+      color: "rgba(255,255,255,0.72)",
+      textDecoration: "none",
+    } as const,
+    btnRow: {
+      display: "flex",
+      gap: "12px",
+      alignItems: "center",
+    } as const,
+    ghostBtn: {
+      border: "1px solid rgba(255,255,255,0.14)",
+      background: "rgba(255,255,255,0.05)",
+      color: "#fff",
+      padding: "11px 16px",
+      borderRadius: "14px",
+      fontSize: "14px",
+      fontWeight: 600,
+      textDecoration: "none",
+    } as const,
+    solidBtn: {
+      background: "#fff",
+      color: "#000",
+      padding: "11px 16px",
+      borderRadius: "14px",
+      fontSize: "14px",
+      fontWeight: 700,
+      textDecoration: "none",
+    } as const,
+    hero: {
+      display: "grid",
+      gridTemplateColumns: "1.1fr 0.9fr",
+      gap: "56px",
+      padding: "72px 0 96px",
+      alignItems: "center",
+    } as const,
+    badge: {
+      display: "inline-block",
+      padding: "8px 12px",
+      borderRadius: "999px",
+      border: "1px solid rgba(255,255,255,0.14)",
+      background: "rgba(255,255,255,0.05)",
+      color: "rgba(255,255,255,0.7)",
+      fontSize: "12px",
+      marginBottom: "20px",
+    } as const,
+    h1: {
+      fontSize: "58px",
+      lineHeight: 1.08,
+      fontWeight: 800,
+      margin: 0,
+      maxWidth: "760px",
+    } as const,
+    lead: {
+      fontSize: "20px",
+      lineHeight: 1.7,
+      color: "rgba(255,255,255,0.68)",
+      marginTop: "22px",
+      maxWidth: "720px",
+    } as const,
+    stats: {
+      display: "grid",
+      gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+      gap: "22px",
+      marginTop: "36px",
+    } as const,
+    statTitle: {
+      fontSize: "30px",
+      fontWeight: 700,
+    } as const,
+    statDesc: {
+      fontSize: "14px",
+      color: "rgba(255,255,255,0.45)",
+      marginTop: "6px",
+    } as const,
+    panel: {
+      borderRadius: "28px",
+      border: "1px solid rgba(255,255,255,0.1)",
+      background: "rgba(255,255,255,0.05)",
+      padding: "24px",
+      boxShadow: "0 20px 50px rgba(0,0,0,0.32)",
+      backdropFilter: "blur(12px)",
+    } as const,
+    panelTop: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    } as const,
+    tiny: {
+      fontSize: "12px",
+      color: "rgba(255,255,255,0.45)",
+    } as const,
+    active: {
+      padding: "6px 12px",
+      borderRadius: "999px",
+      background: "rgba(16,185,129,0.12)",
+      border: "1px solid rgba(16,185,129,0.2)",
+      color: "#86efac",
+      fontSize: "12px",
+    } as const,
+    metrics: {
+      display: "grid",
+      gridTemplateColumns: "repeat(3, 1fr)",
+      gap: "14px",
+      marginTop: "22px",
+    } as const,
+    metricCard: {
+      borderRadius: "18px",
+      background: "#0f1726",
+      padding: "16px",
+      border: "1px solid rgba(255,255,255,0.05)",
+    } as const,
+    metricValue: {
+      marginTop: "10px",
+      fontSize: "28px",
+      fontWeight: 700,
+    } as const,
+    section: {
+      padding: "84px 0",
+    } as const,
+    sectionTitle: {
+      fontSize: "42px",
+      fontWeight: 800,
+      margin: 0,
+    } as const,
+    sectionDesc: {
+      marginTop: "16px",
+      fontSize: "18px",
+      color: "rgba(255,255,255,0.65)",
+      maxWidth: "760px",
+      lineHeight: 1.7,
+    } as const,
+    grid3: {
+      display: "grid",
+      gridTemplateColumns: "repeat(3, 1fr)",
+      gap: "22px",
+      marginTop: "40px",
+    } as const,
+    card: {
+      borderRadius: "28px",
+      border: "1px solid rgba(255,255,255,0.1)",
+      background: "rgba(255,255,255,0.05)",
+      padding: "28px",
+    } as const,
+    cardTitle: {
+      fontSize: "28px",
+      fontWeight: 700,
+      margin: 0,
+    } as const,
+    cardDesc: {
+      marginTop: "16px",
+      fontSize: "15px",
+      lineHeight: 1.7,
+      color: "rgba(255,255,255,0.65)",
+    } as const,
+    item: {
+      marginTop: "12px",
+      borderRadius: "14px",
+      padding: "14px 16px",
+      background: "#0f1726",
+      border: "1px solid rgba(255,255,255,0.06)",
+      fontSize: "14px",
+      color: "rgba(255,255,255,0.82)",
+    } as const,
+    strip: {
+      borderTop: "1px solid rgba(255,255,255,0.1)",
+      borderBottom: "1px solid rgba(255,255,255,0.1)",
+      background: "rgba(255,255,255,0.02)",
+    } as const,
+    gridFeatures: {
+      display: "grid",
+      gridTemplateColumns: "repeat(3, 1fr)",
+      gap: "18px",
+    } as const,
+    featureCard: {
+      borderRadius: "24px",
+      border: "1px solid rgba(255,255,255,0.1)",
+      background: "#0d1421",
+      padding: "24px",
+    } as const,
+    split: {
+      display: "grid",
+      gridTemplateColumns: "0.95fr 1.05fr",
+      gap: "48px",
+      alignItems: "start",
+    } as const,
+    useGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2, 1fr)",
+      gap: "16px",
+    } as const,
+    cta: {
+      borderRadius: "32px",
+      border: "1px solid rgba(255,255,255,0.1)",
+      background:
+        "linear-gradient(90deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1))",
+      padding: "60px 32px",
+      textAlign: "center" as const,
+    },
+    footer: {
+      borderTop: "1px solid rgba(255,255,255,0.08)",
+      padding: "28px 0 40px",
+      color: "rgba(255,255,255,0.5)",
+      fontSize: "14px",
+      display: "flex",
+      justifyContent: "space-between",
+      gap: "20px",
+      flexWrap: "wrap" as const,
+    },
+  };
+
   const coreCards = [
     {
       title: "Advanced card management",
@@ -54,206 +307,156 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0a0f18] text-white">
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.14),transparent_24%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-10 lg:px-8">
-          <header className="flex items-center justify-between py-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15">
-                <span className="text-sm font-bold tracking-[0.2em]">B</span>
+    <main style={styles.page}>
+      <div style={styles.container}>
+        <header style={styles.header}>
+          <div style={styles.brand}>
+            <div style={styles.brandIcon}>B</div>
+            <div>
+              <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: "0.04em" }}>BUVEI</div>
+              <div style={styles.tiny}>Payment Infrastructure</div>
+            </div>
+          </div>
+
+          <nav style={styles.nav}>
+            <a href="#solutions" style={styles.navLink}>Solutions</a>
+            <a href="#features" style={styles.navLink}>Features</a>
+            <a href="#analytics" style={styles.navLink}>Analytics</a>
+            <a href="#contact" style={styles.navLink}>Contact</a>
+          </nav>
+
+          <div style={styles.btnRow}>
+            <a href="https://buvei.io" style={styles.ghostBtn}>Learn More</a>
+            <a href="https://app.buvei.com" style={styles.solidBtn}>Request Invite</a>
+          </div>
+        </header>
+
+        <section style={styles.hero}>
+          <div>
+            <div style={styles.badge}>Private infrastructure for serious teams</div>
+            <h1 style={styles.h1}>Payment solution built for teams that operate at scale</h1>
+            <p style={styles.lead}>
+              Buvei helps businesses manage cards, team structures, balances,
+              and digital payment operations through a cleaner and more
+              professional workflow.
+            </p>
+
+            <div style={{ ...styles.btnRow, marginTop: 28 }}>
+              <a href="https://app.buvei.com" style={styles.solidBtn}>Request Invite</a>
+              <a href="#solutions" style={styles.ghostBtn}>View Platform</a>
+            </div>
+
+            <div style={styles.stats}>
+              <div>
+                <div style={styles.statTitle}>Fast</div>
+                <div style={styles.statDesc}>Issuing flow</div>
               </div>
               <div>
-                <div className="text-lg font-semibold tracking-wide">BUVEI</div>
-                <div className="text-xs text-white/45">Payment Infrastructure</div>
+                <div style={styles.statTitle}>Clear</div>
+                <div style={styles.statDesc}>Balance visibility</div>
               </div>
-            </div>
-
-            <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-              <a href="#solutions" className="hover:text-white">Solutions</a>
-              <a href="#features" className="hover:text-white">Features</a>
-              <a href="#analytics" className="hover:text-white">Analytics</a>
-              <a href="#contact" className="hover:text-white">Contact</a>
-            </nav>
-
-            <div className="hidden items-center gap-3 md:flex">
-              <a
-                href="https://buvei.io"
-                className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10"
-              >
-                Learn More
-              </a>
-              <a
-                href="https://app.buvei.com"
-                className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/90"
-              >
-                Request Invite
-              </a>
-            </div>
-          </header>
-
-          <div className="grid items-center gap-14 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
-            <div>
-              <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/65">
-                Private infrastructure for serious teams
+              <div>
+                <div style={styles.statTitle}>Flexible</div>
+                <div style={styles.statDesc}>Team control</div>
               </div>
-
-              <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-                Payment solution built for teams that operate at scale
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/65">
-                Buvei helps businesses manage cards, team structures, balances,
-                and digital payment operations through a cleaner and more
-                professional workflow.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="https://app.buvei.com"
-                  className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-white/90"
-                >
-                  Request Invite
-                </a>
-                <a
-                  href="#solutions"
-                  className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-                >
-                  View Platform
-                </a>
-              </div>
-
-              <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-4">
-                <div>
-                  <div className="text-2xl font-semibold">Fast</div>
-                  <div className="mt-1 text-sm text-white/45">Issuing flow</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-semibold">Clear</div>
-                  <div className="mt-1 text-sm text-white/45">Balance visibility</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-semibold">Flexible</div>
-                  <div className="mt-1 text-sm text-white/45">Team control</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-semibold">Global</div>
-                  <div className="mt-1 text-sm text-white/45">Digital payments</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:pl-6">
-              <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm text-white/45">Workspace</div>
-                    <div className="mt-1 text-lg font-semibold">Buvei Business</div>
-                  </div>
-                  <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
-                    Active
-                  </div>
-                </div>
-
-                <div className="mt-6 grid grid-cols-3 gap-4">
-                  <div className="rounded-2xl bg-[#0f1726] p-4 ring-1 ring-white/5">
-                    <div className="text-xs text-white/45">Cards</div>
-                    <div className="mt-2 text-2xl font-semibold">126</div>
-                  </div>
-                  <div className="rounded-2xl bg-[#0f1726] p-4 ring-1 ring-white/5">
-                    <div className="text-xs text-white/45">Team users</div>
-                    <div className="mt-2 text-2xl font-semibold">18</div>
-                  </div>
-                  <div className="rounded-2xl bg-[#0f1726] p-4 ring-1 ring-white/5">
-                    <div className="text-xs text-white/45">Spend</div>
-                    <div className="mt-2 text-2xl font-semibold">$82K</div>
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-2xl bg-[#0f1726] p-4 ring-1 ring-white/5">
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="text-sm text-white/70">Recent transactions</span>
-                    <span className="text-xs text-white/40">Live view</span>
-                  </div>
-
-                  <div className="space-y-3">
-                    {[
-                      ["Google Ads", "$1,240.00", "Settled"],
-                      ["Meta Ads", "$890.00", "Pending"],
-                      ["OpenAI", "$120.00", "Settled"],
-                    ].map(([name, amount, status]) => (
-                      <div
-                        key={name}
-                        className="flex items-center justify-between rounded-xl bg-white/[0.03] px-3 py-3"
-                      >
-                        <div>
-                          <div className="text-sm font-medium">{name}</div>
-                          <div className="text-xs text-white/40">Operational payment</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-sm">{amount}</div>
-                          <div className="text-xs text-white/45">{status}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-500/15 to-purple-500/15 p-4">
-                  <div className="text-sm font-medium">Structured for payment operations</div>
-                  <div className="mt-2 text-sm leading-6 text-white/65">
-                    Manage issuing, teams, balances, and spend through one
-                    coherent layer of infrastructure.
-                  </div>
-                </div>
+              <div>
+                <div style={styles.statTitle}>Global</div>
+                <div style={styles.statDesc}>Digital payments</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="solutions" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold sm:text-4xl">A platform built around operational clarity</h2>
-          <p className="mt-4 text-white/65">
+          <div style={styles.panel}>
+            <div style={styles.panelTop}>
+              <div>
+                <div style={styles.tiny}>Workspace</div>
+                <div style={{ marginTop: 6, fontSize: 20, fontWeight: 700 }}>Buvei Business</div>
+              </div>
+              <div style={styles.active}>Active</div>
+            </div>
+
+            <div style={styles.metrics}>
+              <div style={styles.metricCard}>
+                <div style={styles.tiny}>Cards</div>
+                <div style={styles.metricValue}>126</div>
+              </div>
+              <div style={styles.metricCard}>
+                <div style={styles.tiny}>Team users</div>
+                <div style={styles.metricValue}>18</div>
+              </div>
+              <div style={styles.metricCard}>
+                <div style={styles.tiny}>Spend</div>
+                <div style={styles.metricValue}>$82K</div>
+              </div>
+            </div>
+
+            <div style={{ ...styles.metricCard, marginTop: 18 }}>
+              <div style={{ ...styles.panelTop, marginBottom: 12 }}>
+                <span style={{ fontSize: 14, color: "rgba(255,255,255,0.72)" }}>Recent transactions</span>
+                <span style={styles.tiny}>Live view</span>
+              </div>
+
+              {[
+                ["Google Ads", "$1,240.00", "Settled"],
+                ["Meta Ads", "$890.00", "Pending"],
+                ["OpenAI", "$120.00", "Settled"],
+              ].map(([name, amount, status]) => (
+                <div
+                  key={name}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    borderRadius: 14,
+                    padding: "14px 14px",
+                    background: "rgba(255,255,255,0.03)",
+                    marginTop: 10,
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600 }}>{name}</div>
+                    <div style={styles.tiny}>Operational payment</div>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: 14 }}>{amount}</div>
+                    <div style={styles.tiny}>{status}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="solutions" style={styles.section}>
+          <h2 style={styles.sectionTitle}>A platform built around operational clarity</h2>
+          <p style={styles.sectionDesc}>
             Use a more structured payment layer for cards, users, balances, and
             day-to-day business workflows.
           </p>
-        </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {coreCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-[28px] border border-white/10 bg-white/5 p-7"
-            >
-              <h3 className="text-2xl font-semibold">{card.title}</h3>
-              <p className="mt-4 text-sm leading-6 text-white/65">{card.desc}</p>
-              <div className="mt-6 space-y-3">
-                {card.items.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-xl border border-white/8 bg-[#0f1726] px-4 py-3 text-sm text-white/80"
-                  >
-                    {item}
-                  </div>
-                ))}
+          <div style={styles.grid3}>
+            {coreCards.map((card) => (
+              <div key={card.title} style={styles.card}>
+                <h3 style={styles.cardTitle}>{card.title}</h3>
+                <p style={styles.cardDesc}>{card.desc}</p>
+                <div>
+                  {card.items.map((item) => (
+                    <div key={item} style={styles.item}>{item}</div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      </div>
 
-      <section id="features" className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <section id="features" style={styles.strip}>
+        <div style={{ ...styles.container, ...styles.section }}>
+          <div style={styles.gridFeatures}>
             {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-[28px] border border-white/10 bg-[#0d1421] p-6"
-              >
-                <h3 className="text-xl font-semibold">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/65">
+              <div key={feature.title} style={styles.featureCard}>
+                <h3 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>{feature.title}</h3>
+                <p style={{ marginTop: 14, fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.65)" }}>
                   {feature.desc}
                 </p>
               </div>
@@ -262,64 +465,75 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="analytics" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <h2 className="text-3xl font-bold sm:text-4xl">Balance and transaction visibility</h2>
-            <p className="mt-4 text-white/65">
-              Monitor balances, follow recent activity, and maintain a more
-              transparent view of business spending.
-            </p>
+      <div style={styles.container}>
+        <section id="analytics" style={styles.section}>
+          <div style={styles.split}>
+            <div>
+              <h2 style={styles.sectionTitle}>Balance and transaction visibility</h2>
+              <p style={styles.sectionDesc}>
+                Monitor balances, follow recent activity, and maintain a more
+                transparent view of business spending.
+              </p>
 
-            <div className="mt-8 rounded-[28px] border border-white/10 bg-white/5 p-6">
-              <div className="text-sm text-white/45">Available balance</div>
-              <div className="mt-2 text-4xl font-bold">$150,000.00</div>
-              <div className="mt-6 h-2 rounded-full bg-white/10">
-                <div className="h-2 w-[72%] rounded-full bg-gradient-to-r from-blue-400 to-purple-400" />
+              <div style={{ ...styles.card, marginTop: 28 }}>
+                <div style={styles.tiny}>Available balance</div>
+                <div style={{ marginTop: 10, fontSize: 44, fontWeight: 800 }}>$150,000.00</div>
+                <div style={{ marginTop: 22, height: 10, borderRadius: 999, background: "rgba(255,255,255,0.08)" }}>
+                  <div
+                    style={{
+                      width: "72%",
+                      height: "100%",
+                      borderRadius: 999,
+                      background: "linear-gradient(90deg, #60a5fa, #a855f7)",
+                    }}
+                  />
+                </div>
+                <div style={{ ...styles.tiny, marginTop: 10 }}>Operational liquidity view</div>
               </div>
-              <div className="mt-3 text-xs text-white/45">Operational liquidity view</div>
+            </div>
+
+            <div style={styles.useGrid}>
+              {useCases.map((item) => (
+                <div key={item} style={styles.item}>{item}</div>
+              ))}
             </div>
           </div>
+        </section>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {useCases.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 bg-[#0f1726] px-5 py-4 text-sm text-white/80"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-6 pb-24 lg:px-8" id="contact">
-        <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-8 py-14 text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
-            Build a cleaner payment workflow with Buvei
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            For teams managing virtual cards, subscriptions, advertising spend,
-            and digital business payments.
-          </p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://app.buvei.com"
-              className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-white/90"
+        <section id="contact" style={{ paddingBottom: 96 }}>
+          <div style={styles.cta}>
+            <h2 style={{ margin: 0, fontSize: 42, fontWeight: 800 }}>
+              Build a cleaner payment workflow with Buvei
+            </h2>
+            <p
+              style={{
+                margin: "18px auto 0",
+                maxWidth: 760,
+                color: "rgba(255,255,255,0.68)",
+                fontSize: 18,
+                lineHeight: 1.7,
+              }}
             >
-              Request Invite
-            </a>
-            <a
-              href="https://buvei.io"
-              className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              Visit Website
-            </a>
+              For teams managing virtual cards, subscriptions, advertising spend,
+              and digital business payments.
+            </p>
+
+            <div style={{ ...styles.btnRow, justifyContent: "center", marginTop: 30 }}>
+              <a href="https://app.buvei.com" style={styles.solidBtn}>Request Invite</a>
+              <a href="https://buvei.io" style={styles.ghostBtn}>Visit Website</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <footer style={styles.footer}>
+          <div>© 2026 Buvei. All rights reserved.</div>
+          <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
+            <a href="https://buvei.io" style={styles.navLink}>Website</a>
+            <a href="https://app.buvei.com" style={styles.navLink}>App</a>
+          </div>
+        </footer>
+      </div>
     </main>
   );
 }
+页面全部替换为这个 这次对不？ 
