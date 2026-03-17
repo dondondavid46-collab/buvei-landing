@@ -321,7 +321,6 @@ export default function Home() {
   }}
 />
             <div>
-              <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: "0.04em" }}>BUVEI</div>
               <div style={styles.tiny}>Payment Infrastructure</div>
             </div>
           </div>
