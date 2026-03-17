@@ -311,7 +311,19 @@ export default function Home() {
       <div style={styles.container}>
         <header style={styles.header}>
           <div style={styles.brand}>
-            <div style={styles.brandIcon}>B</div>
+            <img
+  src="/buvei-logo.svg"
+  alt="Buvei logo"
+  style={{
+    width: 44,
+    height: 44,
+    borderRadius: 14,
+    objectFit: "contain",
+    background: "rgba(255,255,255,0.06)",
+    padding: 6,
+    border: "1px solid rgba(255,255,255,0.12)",
+  }}
+/>
             <div>
               <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: "0.04em" }}>BUVEI</div>
               <div style={styles.tiny}>Payment Infrastructure</div>
