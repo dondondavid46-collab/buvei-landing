@@ -1,10 +1,5 @@
 import "./globals.css";
 
-export const metadata = {
-  title: "Buvei",
-  description: "Buvei virtual card infrastructure",
-};
-
 export default function RootLayout({
   children,
 }: {
