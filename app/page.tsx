@@ -315,14 +315,11 @@ export default function Home() {
   src="/buvei-logo.svg"
   alt="Buvei logo"
   style={{
-    width: 44,
-    height: 44,
-    objectFit: "contain",
+    width: 120,
+    height: "auto",
+    display: "block",
   }}
 />
-            <div>
-              <div style={styles.tiny}>Payment Infrastructure</div>
-            </div>
           </div>
 
           <nav style={styles.nav}>
