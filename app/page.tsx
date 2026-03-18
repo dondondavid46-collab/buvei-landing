@@ -660,4 +660,3 @@ export default function Home() {
       </div>
     </main>
   );
-}这个还需要怎么优化更高级一点，还有我说的 图片 动效呢，完整的代码再给我一下 让我替换
