@@ -91,19 +91,14 @@ const valuePoints = [
 
 function BuveiLogo() {
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-[#081224] shadow-[0_10px_30px_rgba(255,255,255,.12)] sm:h-11 sm:w-11">
-        <div className="grid grid-cols-2 gap-0.5">
-          <span className="block h-3.5 w-3 rounded-tl-[8px] rounded-br-[5px] bg-[#081224]" />
-          <span className="block h-3.5 w-2 rounded-tr-[8px] bg-[#081224]" />
-          <span className="block h-3.5 w-3 rounded-bl-[8px] rounded-tr-[5px] bg-[#081224]" />
-          <span className="block h-3.5 w-2 rounded-br-[8px] bg-[#081224]" />
-        </div>
-      </div>
-      <span className="text-[24px] font-semibold tracking-[0.02em] text-white sm:text-[29px]">
-        BUVEI
-      </span>
-    </div>
+    <Image
+      src="/buvei-logo.svg"
+      alt="Buvei"
+      width={180}
+      height={48}
+      className="h-auto w-[150px] sm:w-[180px] object-contain"
+      priority
+    />
   );
 }
 
