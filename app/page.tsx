@@ -128,11 +128,22 @@ function SectionIntro({
   );
 }
 
-function PrimaryButton({ children }: { children: React.ReactNode }) {
+function PrimaryButton({
+  children,
+  href = "https://app.buvei.com/",
+}: {
+  children: React.ReactNode;
+  href?: string;
+}) {
   return (
-    <button className="inline-flex items-center justify-center rounded-[20px] bg-white px-6 py-4 text-sm font-semibold text-[#071021] shadow-[0_18px_60px_rgba(255,255,255,.12)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_75px_rgba(255,255,255,.18)] active:translate-y-0">
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center rounded-[20px] bg-white px-6 py-4 text-sm font-semibold text-[#071021] shadow-[0_18px_60px_rgba(255,255,255,.12)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_75px_rgba(255,255,255,.18)] active:translate-y-0"
+    >
       {children}
-    </button>
+    </Link>
   );
 }
 
