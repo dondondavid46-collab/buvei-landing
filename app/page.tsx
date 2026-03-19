@@ -1,15 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const riseIn = {
   hidden: { opacity: 0, y: 26 },
-  show: (i = 0) => ({
+  show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.72, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      duration: 0.72,
+      delay: i * 0.08,
+      ease: [0.22, 1, 0.36, 1],
+    },
   }),
 };
 
@@ -96,7 +101,7 @@ function BuveiLogo() {
       alt="Buvei"
       width={180}
       height={48}
-      className="h-auto w-[150px] sm:w-[180px] object-contain"
+      className="h-auto w-[140px] sm:w-[170px] object-contain"
       priority
     />
   );
@@ -118,7 +123,7 @@ function SectionIntro({
       <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-blue-200/80">
         {eyebrow}
       </div>
-      <h2 className="text-[34px] font-semibold tracking-[-0.055em] text-white sm:text-[48px] lg:text-[60px]">
+      <h2 className="text-[34px] font-semibold tracking-[-0.055em] text-white sm:text-[48px] lg:text-[58px]">
         {title}
       </h2>
       <p className="mt-5 text-base leading-7 text-white/58 sm:text-lg sm:leading-8">
@@ -140,18 +145,29 @@ function PrimaryButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center rounded-[20px] bg-white px-6 py-4 text-sm font-semibold text-[#071021] shadow-[0_18px_60px_rgba(255,255,255,.12)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_75px_rgba(255,255,255,.18)] active:translate-y-0"
+      className="relative z-10 inline-flex items-center justify-center rounded-[20px] bg-white px-6 py-4 text-sm font-semibold text-[#071021] shadow-[0_18px_60px_rgba(255,255,255,.12)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_75px_rgba(255,255,255,.18)] active:translate-y-0"
     >
       {children}
     </Link>
   );
 }
 
-function SecondaryButton({ children }: { children: React.ReactNode }) {
+function SecondaryButton({
+  children,
+  href = "https://app.buvei.com/",
+}: {
+  children: React.ReactNode;
+  href?: string;
+}) {
   return (
-    <button className="inline-flex items-center justify-center rounded-[20px] border border-white/10 bg-white/[0.04] px-6 py-4 text-sm font-medium text-white/88 backdrop-blur-xl transition duration-300 hover:bg-white/[0.08] hover:text-white active:bg-white/[0.1]">
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative z-10 inline-flex items-center justify-center rounded-[20px] border border-white/10 bg-white/[0.04] px-6 py-4 text-sm font-medium text-white/88 backdrop-blur-xl transition duration-300 hover:bg-white/[0.08] hover:text-white active:bg-white/[0.1]"
+    >
       {children}
-    </button>
+    </Link>
   );
 }
 
@@ -368,7 +384,7 @@ export default function Page() {
             Private infrastructure for serious teams
           </div>
 
-          <h1 className="text-[44px] font-semibold leading-[0.94] tracking-[-0.065em] text-white sm:text-[62px] lg:text-[88px]">
+          <h1 className="text-[38px] font-semibold leading-[0.96] tracking-[-0.055em] text-white sm:text-[52px] lg:text-[68px]">
             Payment solution built for industry-grade teams
           </h1>
 
